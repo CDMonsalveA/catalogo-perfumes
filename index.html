@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Catálogo de fragancias · Pide por WhatsApp</title>
+<meta name="description" content="Más de 380 fragancias para hombre, mujer y unisex desde $65.000. Busca por nombre, marca o código y pide por WhatsApp.">
+<meta property="og:title" content="Catálogo de fragancias">
+<meta property="og:description" content="Busca tu perfume por nombre, marca o código y pídelo por WhatsApp.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,500;0,6..96,700;1,6..96,500;1,6..96,700&family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#2A1233; --ink-2:#5B4266; --paper:#FBF5F3; --card:#FFFFFF; --line:#EBDCD7; --muted:#76626F;
+  --gold:#B8912F; --gold-tint:#F3E7C8; --champagne:#EFDDAE;
+  --wa:#128C4A; --wa-ink:#FFFFFF; --hero:#2A1233; --hero-ink:#F7ECF1;
+  --f:#C93A6B; --f-tint:#FBE6EE; --m:#1D6B75; --m-tint:#DDEFF1; --u:#A87B1E; --u-tint:#F6EBCF; --s:#5B3A8C; --s-tint:#ECE3F7;
+  --focus:#7A2FA0;
+  --serif:"Bodoni Moda","Didot","Bodoni 72",Georgia,"Times New Roman",serif;
+  --sans:"Figtree",system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --ink:#F6E9F0; --ink-2:#D9C4D0; --paper:#150819; --card:#22102D; --line:#3A2447; --muted:#B49DAC;
+    --gold:#E0BC6A; --gold-tint:#3A2E14; --champagne:#EFDDAE;
+    --wa:#1FAF5A; --wa-ink:#06210F; --hero:#0F0614; --hero-ink:#F7ECF1;
+    --f:#F06C97; --f-tint:#3B1727; --m:#5CC2CF; --m-tint:#12333A; --u:#E0BC6A; --u-tint:#3A2E14; --s:#B593EB; --s-tint:#2C1D46;
+    --focus:#D2A8FF;
+  }
+}
+:root[data-theme="dark"]{
+  --ink:#F6E9F0; --ink-2:#D9C4D0; --paper:#150819; --card:#22102D; --line:#3A2447; --muted:#B49DAC;
+  --gold:#E0BC6A; --gold-tint:#3A2E14; --champagne:#EFDDAE;
+  --wa:#1FAF5A; --wa-ink:#06210F; --hero:#0F0614; --hero-ink:#F7ECF1;
+  --f:#F06C97; --f-tint:#3B1727; --m:#5CC2CF; --m-tint:#12333A; --u:#E0BC6A; --u-tint:#3A2E14; --s:#B593EB; --s-tint:#2C1D46;
+  --focus:#D2A8FF;
+}
+html{scroll-padding-top:env(safe-area-inset-top,0px);-webkit-text-size-adjust:100%}
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:16px;line-height:1.5;min-height:100vh}
+button,input,select{font:inherit;color:inherit}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--focus);outline-offset:2px;border-radius:6px}
+.wrap{width:100%;max-width:1120px;margin:0 auto;padding:0 16px}
+
+/* Hero */
+.hero{background:var(--hero);color:var(--hero-ink);padding:22px 0 34px}
+.topline{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:26px}
+.mark{font-family:var(--serif);font-style:italic;font-weight:700;font-size:1.15rem;color:var(--champagne);letter-spacing:.01em}
+.ask{display:inline-flex;align-items:center;gap:8px;padding:9px 14px;border-radius:999px;background:var(--wa);color:var(--wa-ink);text-decoration:none;font-weight:600;font-size:.9rem}
+.ask svg{width:18px;height:18px;flex:none}
+h1{font-family:var(--serif);font-weight:700;font-size:clamp(2.1rem,7vw,3.6rem);line-height:1.05;margin:0 0 10px;color:var(--champagne);letter-spacing:-.01em;max-width:16ch}
+.lede{margin:0 0 20px;max-width:52ch;color:var(--hero-ink);opacity:.86}
+.search{position:relative;max-width:640px}
+.search input{width:100%;height:56px;border-radius:16px;border:2px solid transparent;background:#fff;color:#2A1233;padding:0 48px 0 50px;font-size:1.05rem}
+.search input::placeholder{color:#7B6A76}
+.search .ico{position:absolute;left:16px;top:50%;translate:0 -50%;width:22px;height:22px;color:#5B4266;pointer-events:none}
+.search .clear{position:absolute;right:8px;top:50%;translate:0 -50%;width:40px;height:40px;border:0;border-radius:12px;background:transparent;color:#5B4266;cursor:pointer;font-size:1.3rem;line-height:1;display:none}
+.search .clear.on{display:block}
+.try{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+.try button{border:1px solid rgba(239,221,174,.45);background:transparent;color:var(--champagne);border-radius:999px;padding:6px 13px;cursor:pointer;font-size:.9rem}
+.try button:hover{background:rgba(239,221,174,.12)}
+
+/* Combo band */
+.combo{background:var(--gold-tint);border-bottom:1px solid var(--line)}
+.combo .wrap{display:flex;flex-wrap:wrap;gap:6px 22px;padding-top:11px;padding-bottom:11px;font-size:.95rem}
+.combo b{font-weight:700}
+.combo span{white-space:nowrap}
+
+/* Filters */
+.filters{padding:18px 0 6px;display:grid;gap:12px}
+.row{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.seg{display:flex;gap:8px;overflow-x:auto;padding-bottom:4px;scrollbar-width:none}
+.seg::-webkit-scrollbar{display:none}
+.pill{flex:none;border:1.5px solid var(--line);background:var(--card);color:var(--ink);border-radius:999px;padding:8px 15px;cursor:pointer;font-weight:500;white-space:nowrap}
+.pill small{opacity:.7;font-weight:400;margin-left:4px}
+.pill[aria-pressed="true"]{background:var(--ink);border-color:var(--ink);color:var(--paper)}
+.selects{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;max-width:520px}
+.sel{display:flex;flex-direction:column;gap:3px;font-size:.82rem;color:var(--muted);min-width:0}
+.sel select{width:100%;height:42px;border-radius:12px;border:1.5px solid var(--line);background:var(--card);color:var(--ink);padding:0 34px 0 12px;max-width:100%}
+.count{margin:6px 0 14px;color:var(--muted);font-size:.95rem}
+
+/* Grid */
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,235px),1fr));gap:12px;padding-bottom:110px}
+@media (max-width:520px){.grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}}
+.card{position:relative;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:12px 12px 12px 16px;display:flex;flex-direction:column;gap:6px;content-visibility:auto;contain-intrinsic-size:auto 170px;overflow:hidden}
+.card::before{content:"";position:absolute;left:0;top:0;bottom:0;width:5px;background:var(--stripe,var(--gold))}
+.card[data-s="Mujer"]{--stripe:var(--f);--tint:var(--f-tint)}
+.card[data-s="Hombre"]{--stripe:var(--m);--tint:var(--m-tint)}
+.card[data-s="Unisex"]{--stripe:var(--u);--tint:var(--u-tint)}
+.card[data-s="Sets"]{--stripe:var(--s);--tint:var(--s-tint)}
+.meta{display:flex;align-items:center;gap:8px;font-size:.78rem;color:var(--muted);min-width:0}
+.meta .brand{font-weight:600;color:var(--ink-2);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.meta .code{white-space:nowrap;font-variant-numeric:tabular-nums}
+.chips li.pchip{background:var(--gold-tint);color:var(--gold);font-weight:700}
+h3{margin:0;font-size:1.02rem;line-height:1.28;font-weight:600;letter-spacing:-.005em}
+.chips{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:5px}
+.chips li{background:var(--tint,var(--gold-tint));color:var(--ink);border-radius:6px;padding:2px 7px;font-size:.74rem;font-weight:500}
+.foot{margin-top:auto;padding-top:8px;display:grid;gap:8px}
+.price{font-family:var(--serif);font-weight:700;font-size:1.32rem;letter-spacing:-.01em}
+.add{border:0;border-radius:999px;background:var(--wa);color:var(--wa-ink);font-weight:700;font-size:.88rem;padding:9px 12px;cursor:pointer;min-height:42px;width:100%}
+.add.in{background:transparent;color:var(--wa);box-shadow:inset 0 0 0 2px var(--wa)}
+.empty{grid-column:1/-1;text-align:center;padding:40px 10px;color:var(--muted)}
+.empty a{color:var(--wa);font-weight:700}
+
+/* Cart bar */
+.bar{position:fixed;left:0;right:0;bottom:0;background:var(--ink);color:var(--paper);padding:12px 16px calc(12px + env(safe-area-inset-bottom,0px));display:none;z-index:20;box-shadow:0 -6px 24px rgba(0,0,0,.18)}
+.bar.on{display:block}
+.bar .in{max-width:1120px;margin:0 auto;display:flex;align-items:center;gap:14px;justify-content:space-between}
+.bar .txt{min-width:0}
+.bar .tot{font-weight:700}
+.bar .nudge{font-size:.85rem;opacity:.9}
+.bar button{flex:none;border:0;border-radius:999px;background:var(--wa);color:var(--wa-ink);font-weight:700;padding:12px 18px;cursor:pointer;min-height:44px}
+dialog{width:min(560px,100vw - 24px);max-height:88vh;border:0;border-radius:18px;padding:0;background:var(--card);color:var(--ink);box-shadow:0 20px 60px rgba(0,0,0,.35)}
+dialog::backdrop{background:rgba(20,6,26,.6)}
+.dh{display:flex;justify-content:space-between;align-items:center;padding:16px 18px;border-bottom:1px solid var(--line)}
+.dh h2{margin:0;font-family:var(--serif);font-size:1.4rem}
+.dh button{border:0;background:transparent;font-size:1.6rem;cursor:pointer;width:44px;height:44px;border-radius:12px}
+.list{list-style:none;margin:0;padding:6px 18px;max-height:46vh;overflow:auto}
+.list li{display:grid;grid-template-columns:1fr auto;gap:2px 10px;padding:12px 0;border-bottom:1px solid var(--line)}
+.list .nm{font-weight:600}
+.list .sub{color:var(--muted);font-size:.85rem}
+.qty{display:flex;align-items:center;gap:8px;grid-row:1/3;grid-column:2}
+.qty button{width:34px;height:34px;border-radius:10px;border:1.5px solid var(--line);background:var(--card);cursor:pointer;font-size:1.1rem}
+.sum{padding:14px 18px;display:grid;gap:6px}
+.sum div{display:flex;justify-content:space-between}
+.sum .save{color:var(--wa);font-weight:700}
+.sum .total{font-family:var(--serif);font-size:1.5rem;font-weight:700}
+.send{display:flex;align-items:center;justify-content:center;gap:8px;margin:0 18px 18px;padding:14px;border-radius:14px;background:var(--wa);color:var(--wa-ink);text-decoration:none;font-weight:700}
+.note{padding:0 18px 16px;color:var(--muted);font-size:.82rem}
+
+footer{border-top:1px solid var(--line);padding:22px 0 130px;color:var(--muted);font-size:.85rem}
+footer p{max-width:70ch;margin:0 0 8px}
+@media (prefers-reduced-motion:no-preference){ .add{transition:background-color .15s, box-shadow .15s} }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="topline">
+      <span class="mark">Catálogo de fragancias</span>
+      <a class="ask" id="askLink" href="#" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4 3h16a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H9.5L4 22v-4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2Z"/></svg>
+        Escríbenos
+      </a>
+    </div>
+    <h1>¿Qué perfume buscas?</h1>
+    <p class="lede"><span id="total"></span> fragancias para hombre, mujer y unisex. Busca por nombre, marca o código y pídelo por WhatsApp.</p>
+    <div class="search">
+      <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.500-3.500"/></svg>
+      <input id="q" type="search" inputmode="search" autocomplete="off" placeholder="Ej: Sauvage, Yara, 212" aria-label="Buscar perfume por nombre, marca o código">
+      <button class="clear" id="clear" aria-label="Borrar búsqueda">×</button>
+    </div>
+    <div class="try" id="try" aria-label="Búsquedas sugeridas"></div>
+  </div>
+</header>
+
+<main class="wrap">
+  <section class="filters" aria-label="Filtros">
+    <div class="seg" id="segAud" role="group" aria-label="Para quién"></div>
+    <div class="seg" id="segPrice" role="group" aria-label="Rango de precio"></div>
+    <div class="selects">
+      <label class="sel">Marca
+        <select id="brand"></select>
+      </label>
+      <label class="sel">Ordenar por
+        <select id="sort">
+          <option value="cat">Orden del catálogo</option>
+          <option value="brand">Marca A–Z</option>
+          <option value="asc">Precio: menor a mayor</option>
+          <option value="desc">Precio: mayor a menor</option>
+        </select>
+      </label>
+    </div>
+  </section>
+  <p class="count" id="count" aria-live="polite"></p>
+  <section class="grid" id="grid" aria-label="Perfumes"></section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p>Precios en pesos colombianos (COP), sujetos a cambio y a disponibilidad. Confirma disponibilidad, forma de pago y entrega por WhatsApp.</p>
+    <p>Los nombres de marcas se mencionan como referencia. Este catálogo no está afiliado a sus titulares y las fragancias no se presentan como productos originales de ellas.</p>
+  </div>
+</footer>
+
+<div class="bar" id="bar">
+  <div class="in">
+    <div class="txt"><div class="tot" id="barTot"></div><div class="nudge" id="barNudge"></div></div>
+    <button id="openCart">Ver pedido</button>
+  </div>
+</div>
+
+<dialog id="cart" aria-labelledby="cartT">
+  <div class="dh"><h2 id="cartT">Tu pedido</h2><button id="closeCart" aria-label="Cerrar">×</button></div>
+  <ul class="list" id="list"></ul>
+  <div class="sum" id="sum"></div>
+  <a class="send" id="send" href="#" target="_blank" rel="noopener">Enviar pedido por WhatsApp</a>
+  <p class="note">Se abre WhatsApp con tu pedido escrito. Un asesor confirma disponibilidad, pago y entrega.</p>
+</dialog>
+
+<script id="data" type="application/json">[{"c":"S-1","b":"Ilmin","n":"Set de 3 fragancias","g":"Unisex","s":"Sets","ch":["3 × 30 ml"],"p":0,"pr":115000},{"c":"S-2","b":"Lattafa","n":"Set de 4 fragancias","g":"Unisex","s":"Sets","ch":["Dama y caballero"],"p":0,"pr":100000},{"c":"S-3","b":"Moschino","n":"Set Toy · 3 unidades","g":"Unisex","s":"Sets","ch":["3 × 30 ml"],"p":0,"pr":100000},{"c":"S-4","b":"Orientica","n":"Set de 6 fragancias","g":"Unisex","s":"Sets","ch":["6 × 7,5 ml"],"p":0,"pr":110000},{"c":"S-5","b":"Paco Rabanne","n":"Set × 2 Phantom","g":"Hombre","s":"Sets","ch":[],"p":0,"pr":80000},{"c":"M-001","b":"Afnan","n":"9AM pour Femme","g":"Mujer","s":"Mujer","ch":["Caja"],"p":0,"pr":70000},{"c":"M-002","b":"Afnan","n":"9PM pour Femme","g":"Mujer","s":"Mujer","ch":["Baúl"],"p":0,"pr":80000},{"c":"M-003","b":"Ariana Grande","n":"Cloud","g":"Mujer","s":"Mujer","ch":[],"p":0,"pr":80000},{"c":"M-004","b":"Ariana Grande","n":"Cloud Pink","g":"Mujer","s":"Mujer","ch":[],"p":0,"pr":80000},{"c":"M-005","b":"Ariana Grande","n":"Mood Blush","g":"Mujer","s":"Mujer","ch":[],"p":0,"pr":75000},{"c":"M-006","b":"Ariana Grande","n":"Mood Vainilla","g":"Mujer","s":"Mujer","ch":[],"p":0,"pr":75000},{"c":"M-007","b":"Ariana Grande","n":"Sweet Like Candy","g":"Mujer","s":"Mujer","ch":[],"p":0,"pr":70000},{"c":"M-008","b":"Ariana Grande","n":"Thank U Next","g":"Mujer","s":"Mujer","ch":[],"p":0,"pr":80000},{"c":"M-009","b":"Armaf","n":"Club de Nuit","g":"Mujer","s":"Mujer","ch":[],"p":0,"pr":75000},{"c":"M-010","b":"Armaf","n":"Club Nuit Maleka","g":"Mujer","s":"Mujer","ch":[],"p":0,"pr":75000},{"c":"M-011","b":"Armaf","n":"Island Bliss","g":"Mujer","s":"Mujer","ch":["Presentación de lujo"],"p":0,"pr":105000},{"c":"M-012","b":"Armaf","n":"Odyssey Candee","g":"Mujer","s":"Mujer","ch":[],"p":0,"pr":80000},{"c":"M-013","b":"Armaf","n":"Yum Yum","g":"Mujer","s":"Mujer","ch":[],"p":0,"pr":105000},{"c":"M-014","b":"Bharara","n":"Rose","g":"Mujer","s":"Mujer","ch":["Metálico"],"p":1,"pr":105000},{"c":"M-015","b":"Britney Spears","n":"Fantasy","g":"Mujer","s":"Mujer","ch":[],"p":0,"pr":65000},{"c":"M-016","b":"Burberry","n":"Her","g":"Mujer","s":"Mujer","ch":[],"p":0,"pr":65000},{"c":"M-017","b":"Bvlgari","n":"Omnia Amatista","g":"Mujer","s":"Mujer","ch":["100 ml"],"p":0,"pr":70000},{"c":"M-018","b":"Bvlgari","n":"Omnia Coral","g":"Mujer","s":"Mujer","ch":["100 ml"],"p":0,"pr":70000},{"c":"M-019","b":"Bvlgari","n":"Omnia Cristal","g":"Mujer","s":"Mujer","ch":[],"p":0,"pr":65000},{"c":"M-020","b":"Bvlgari","n":"Omnia Cristal","g":"Mujer","s":"Mujer","ch":["100 ml"],"p":0,"pr":70000},{"c":"M-021","b":"Bvlgari","n":"Omnia Golden Citrine","g":"Mujer","s":"Mujer","ch":[],"p":0,"pr":65000},{"c":"M-022","b":"Bvlgari","n":"Omnia Katrantzou","g":"Mujer","s":"Mujer","ch":[],"p":0,"pr":65000},{"c":"M-023","b":"Bvlgari","n":"Omnia Paraiba","g":"Mujer","s":"Mujer","ch":[],"p":0,"pr":65000},{"c":"M-024","b":"Bvlgari","n":"Omnia Pink Sapphire","g":"Mujer","s":"Mujer","ch":[],"p":0,"pr":65000},{"c":"M-025","b":"Calvin Klein","n":"CK IN2U","g":"Mujer","s":"Mujer","ch":["100 ml"],"p":0,"pr":70000},{"c":"M-026","b":"Calvin Klein","n":"Euphoria","g":"Mujer","s":"Mujer","ch":[],"p":0,"pr":65000},{"c":"M-027","b":"Carolina Herrera","n":"212 Héroes","g":"Mujer","s":"Mujer","ch":[],"p":0,"pr":65000},{"c":"M-028","b":"Carolina Herrera","n":"212 I Love NY","g":"Mujer","s":"Mujer","ch":[],"p":0,"pr":65000},{"c":"M-029","b":"Carolina Herrera","n":"212 NYC","g":"Mujer","s":"Mujer","ch":[],"p":0,"pr":65000},{"c":"M-030","b":"Carolina Herrera","n":"212 Sexy","g":"Mujer","s":"Mujer","ch":[],"p":0,"pr":65000},{"c":"M-031","b":"Carolina Herrera","n":"212 VIP","g":"Mujer","s":"Mujer","ch":["Metálico"],"p":0,"pr":75000},{"c":"M-032","b":"Carolina Herrera","n":"212 VIP Rose","g":"Mujer","s":"Mujer","ch":[],"p":0,"pr":65000},{"c":"M-033","b":"Carolina Herrera","n":"212 VIP Rose Red","g":"Mujer","s":"Mujer","ch":[],"p":0,"pr":65000},{"c":"M-034","b":"Carolina Herrera","n":"212 VIP Rose Smiley","g":"Mujer","s":"Mujer","ch":[],"p":0,"pr":65000},{"c":"M-035","b":"Carolina Herrera","n":"212 VIP Wild Party","g":"Mujer","s":"Mujer","ch":[],"p":0,"pr":65000},{"c":"M-036","b":"Carolina Herrera","n":"212 VIP Wins","g":"Mujer","s":"Mujer","ch":[],"p":0,"pr":65000},{"c":"M-037","b":"Carolina Herrera","n":"CH","g":"Mujer","s":"Mujer","ch":[],"p":0,"pr":65000},{"c":"M-038","b":"Carolina Herrera","n":"Good Girl Blush","g":"Mujer","s":"Mujer","ch":[],"p":0,"pr":75000},{"c":"M-039","b":"Carolina Herrera","n":"Good Girl Blush Elixir","g":"Mujer","s":"Mujer","ch":["80 ml"],"p":0,"pr":75000},{"c":"M-040","b":"Carolina Herrera","n":"Good Girl Fantastic Pink","g":"Mujer","s":"Mujer","ch":[],"p":0,"pr":70000},{"c":"M-041","b":"Carolina Herrera","n":"Good Girl Legere","g":"Mujer","s":"Mujer","ch":[],"p":0,"pr":70000},{"c":"M-042","b":"Carolina Herrera","n":"Good Girl Supreme","g":"Mujer","s":"Mujer","ch":[],"p":0,"pr":80000},{"c":"M-043","b":"Carolina Herrera","n":"Good Girl Very","g":"Mujer","s":"Mujer","ch":[],"p":0,"pr":70000},{"c":"M-044","b":"Carolina Herrera","n":"La Bomba","g":"Mujer","s":"Mujer","ch":[],"p":0,"pr":80000},{"c":"M-045","b":"Carolina Herrera","n":"Tradicional","g":"Mujer","s":"Mujer","ch":[],"p":0,"pr":65000},{"c":"M-046","b":"Carolina Herrera","n":"Very Glam","g":"Mujer","s":"Mujer","ch":[],"p":0,"pr":70000},{"c":"M-047","b":"Chanel","n":"Chance Chanel","g":"Mujer","s":"Mujer","ch":[],"p":0,"pr":65000},{"c":"M-048","b":"Chanel","n":"Chance Chanel Fraiche","g":"Mujer","s":"Mujer","ch":[],"p":0,"pr":70000},{"c":"M-049","b":"Chanel","n":"Chance Chanel Tendré","g":"Mujer","s":"Mujer","ch":["Metálico"],"p":0,"pr":75000},{"c":"M-050","b":"Chanel","n":"Coco Mademoiselle","g":"Mujer","s":"Mujer","ch":[],"p":1,"pr":75000},{"c":"M-051","b":"Chanel","n":"Gabrielle","g":"Mujer","s":"Mujer","ch":[],"p":0,"pr":65000},{"c":"M-052","b":"Chanel","n":"N°5","g":"Mujer","s":"Mujer","ch":[],"p":0,"pr":65000},{"c":"M-053","b":"Creed","n":"Love in Black","g":"Mujer","s":"Mujer","ch":[],"p":0,"pr":65000},{"c":"M-054","b":"Creed","n":"Love in White","g":"Mujer","s":"Mujer","ch":[],"p":0,"pr":70000},{"c":"M-055","b":"Creed","n":"Spring Flower","g":"Mujer","s":"Mujer","ch":[],"p":0,"pr":65000},{"c":"M-056","b":"Dior","n":"Joy Dior","g":"Mujer","s":"Mujer","ch":[],"p":0,"pr":65000},{"c":"M-057","b":"Dior","n":"J’adore","g":"Mujer","s":"Mujer","ch":[],"p":0,"pr":65000},{"c":"M-058","b":"Dior","n":"Miss Dior Parfum","g":"Mujer","s":"Mujer","ch":[],"p":0,"pr":70000},{"c":"M-059","b":"DKNY","n":"Be Delicious","g":"Mujer","s":"Mujer","ch":[],"p":0,"pr":70000},{"c":"M-060","b":"Dolce & Gabbana","n":"Italian Love","g":"Mujer","s":"Mujer","ch":[],"p":0,"pr":65000},{"c":"M-061","b":"Dolce & Gabbana","n":"Italian Zest","g":"Mujer","s":"Mujer","ch":[],"p":0,"pr":65000},{"c":"M-062","b":"Dolce & Gabbana","n":"Light Blue","g":"Mujer","s":"Mujer","ch":[],"p":1,"pr":75000},{"c":"M-063","b":"Dolce & Gabbana","n":"Love Is Love Light Blue","g":"Mujer","s":"Mujer","ch":[],"p":0,"pr":65000},{"c":"M-064","b":"Dolce & Gabbana","n":"L’impératrice 3","g":"Mujer","s":"Mujer","ch":[],"p":0,"pr":70000},{"c":"M-065","b":"Dolce & Gabbana","n":"Q","g":"Mujer","s":"Mujer","ch":[],"p":0,"pr":65000},{"c":"M-066","b":"Dolce & Gabbana","n":"The One","g":"Mujer","s":"Mujer","ch":[],"p":0,"pr":65000},{"c":"M-067","b":"Escada","n":"Sorbetto Rosso","g":"Mujer","s":"Mujer","ch":[],"p":0,"pr":70000},{"c":"M-068","b":"Fred Hayman","n":"Touch","g":"Mujer","s":"Mujer","ch":[],"p":0,"pr":65000},{"c":"M-069","b":"Giorgio Armani","n":"Acqua di Gioia","g":"Mujer","s":"Mujer","ch":[],"p":0,"pr":65000},{"c":"M-070","b":"Givenchy","n":"Ange ou Demon","g":"Mujer","s":"Mujer","ch":[],"p":0,"pr":65000},{"c":"M-071","b":"Givenchy","n":"Organza","g":"Mujer","s":"Mujer","ch":[],"p":0,"pr":65000},{"c":"M-072","b":"Hugo Boss","n":"Scent","g":"Mujer","s":"Mujer","ch":[],"p":0,"pr":65000},{"c":"M-073","b":"Ilmin","n":"Il Roso","g":"Mujer","s":"Mujer","ch":["Baúl"],"p":0,"pr":105000},{"c":"M-074","b":"Issey Miyake","n":"Issey Miyake","g":"Mujer","s":"Mujer","ch":[],"p":0,"pr":65000},{"c":"M-075","b":"Jean Paul Gaultier","n":"Gaultier Divine","g":"Mujer","s":"Mujer","ch":[],"p":0,"pr":80000},{"c":"M-076","b":"Jean Paul Gaultier","n":"La Belle","g":"Mujer","s":"Mujer","ch":[],"p":0,"pr":80000},{"c":"M-077","b":"Jean Paul Gaultier","n":"Scandal","g":"Mujer","s":"Mujer","ch":["Caja","100 ml"],"p":0,"pr":65000},{"c":"M-078","b":"Jesús del Pozo","n":"Halloween","g":"Mujer","s":"Mujer","ch":[],"p":0,"pr":65000},{"c":"M-079","b":"Kenzo","n":"Flower by Kenzo","g":"Mujer","s":"Mujer","ch":[],"p":0,"pr":75000},{"c":"M-080","b":"Lacoste","n":"L.12.12 pour Elegant","g":"Mujer","s":"Mujer","ch":[],"p":0,"pr":65000},{"c":"M-081","b":"Lacoste","n":"L.12.12 pour Natural","g":"Mujer","s":"Mujer","ch":[],"p":0,"pr":65000},{"c":"M-082","b":"Lacoste","n":"L.12.12 Sparkling","g":"Mujer","s":"Mujer","ch":[],"p":0,"pr":65000},{"c":"M-083","b":"Lacoste","n":"Touch of Pink","g":"Mujer","s":"Mujer","ch":[],"p":0,"pr":65000},{"c":"M-084","b":"Lancôme","n":"La Vida es Bella","g":"Mujer","s":"Mujer","ch":["100 ml"],"p":0,"pr":70000},{"c":"M-085","b":"Lancôme","n":"La Vida es Bella","g":"Mujer","s":"Mujer","ch":["75 ml"],"p":0,"pr":65000},{"c":"M-086","b":"Lancôme","n":"Trésor","g":"Mujer","s":"Mujer","ch":[],"p":0,"pr":65000},{"c":"M-087","b":"Lattafa","n":"Atheeri","g":"Mujer","s":"Mujer","ch":["Baúl"],"p":0,"pr":90000},{"c":"M-088","b":"Lattafa","n":"Atheeri","g":"Mujer","s":"Mujer","ch":["Caja"],"p":0,"pr":75000},{"c":"M-089","b":"Lattafa","n":"Berry on Top","g":"Mujer","s":"Mujer","ch":[],"p":0,"pr":95000},{"c":"M-090","b":"Lattafa","n":"Chocó Overdose","g":"Mujer","s":"Mujer","ch":[],"p":0,"pr":95000},{"c":"M-091","b":"Lattafa","n":"Cookie Crave","g":"Mujer","s":"Mujer","ch":[],"p":0,"pr":95000},{"c":"M-092","b":"Lattafa","n":"Eclaire","g":"Mujer","s":"Mujer","ch":[],"p":0,"pr":100000},{"c":"M-093","b":"Lattafa","n":"Fakhar Rose","g":"Mujer","s":"Mujer","ch":[],"p":0,"pr":95000},{"c":"M-094","b":"Lattafa","n":"Haya","g":"Mujer","s":"Mujer","ch":["Baúl"],"p":0,"pr":100000},{"c":"M-095","b":"Lattafa","n":"Haya","g":"Mujer","s":"Mujer","ch":["Caja"],"p":0,"pr":75000},{"c":"M-096","b":"Lattafa","n":"Mallow Madness","g":"Mujer","s":"Mujer","ch":[],"p":0,"pr":95000},{"c":"M-097","b":"Lattafa","n":"Mayar","g":"Mujer","s":"Mujer","ch":[],"p":0,"pr":105000},{"c":"M-098","b":"Lattafa","n":"Mayar Natural Intense","g":"Mujer","s":"Mujer","ch":[],"p":0,"pr":100000},{"c":"M-099","b":"Lattafa","n":"Noble Blush","g":"Mujer","s":"Mujer","ch":[],"p":0,"pr":100000},{"c":"M-100","b":"Lattafa","n":"Vainilla Freak","g":"Mujer","s":"Mujer","ch":[],"p":0,"pr":95000},{"c":"M-101","b":"Lattafa","n":"Whipped Pleasure","g":"Mujer","s":"Mujer","ch":[],"p":0,"pr":95000},{"c":"M-102","b":"Lattafa","n":"Yara","g":"Mujer","s":"Mujer","ch":[],"p":0,"pr":75000},{"c":"M-103","b":"Lattafa","n":"Yara Candy","g":"Mujer","s":"Mujer","ch":[],"p":0,"pr":75000},{"c":"M-104","b":"Lattafa","n":"Yara Elixir","g":"Mujer","s":"Mujer","ch":[],"p":0,"pr":80000},{"c":"M-105","b":"Lattafa","n":"Yara Tous","g":"Mujer","s":"Mujer","ch":[],"p":0,"pr":75000},{"c":"M-106","b":"Montale","n":"Roses Musk","g":"Mujer","s":"Mujer","ch":[],"p":0,"pr":65000},{"c":"M-107","b":"Moschino","n":"Funny","g":"Mujer","s":"Mujer","ch":[],"p":0,"pr":65000},{"c":"M-108","b":"Moschino","n":"Hippy Fizz","g":"Mujer","s":"Mujer","ch":[],"p":0,"pr":85000},{"c":"M-109","b":"Moschino","n":"Light Clouds","g":"Mujer","s":"Mujer","ch":[],"p":0,"pr":85000},{"c":"M-110","b":"Moschino","n":"Toy 2 Cabeza Grande","g":"Mujer","s":"Mujer","ch":[],"p":0,"pr":75000},{"c":"M-111","b":"Moschino","n":"Toy 2 Gold Edition","g":"Mujer","s":"Mujer","ch":[],"p":0,"pr":75000},{"c":"M-112","b":"Moschino","n":"Toy Bubble Gum Cabeza Mediana","g":"Mujer","s":"Mujer","ch":[],"p":0,"pr":75000},{"c":"M-113","b":"Orientica","n":"Dania Exclusive","g":"Mujer","s":"Mujer","ch":["Envase plástico"],"p":0,"pr":95000},{"c":"M-114","b":"Orientica","n":"Velvet","g":"Mujer","s":"Mujer","ch":["Estuche de lujo","Metálico"],"p":0,"pr":110000},{"c":"M-115","b":"Paco Rabanne","n":"Black XS","g":"Mujer","s":"Mujer","ch":[],"p":0,"pr":65000},{"c":"M-116","b":"Paco Rabanne","n":"Fame","g":"Mujer","s":"Mujer","ch":[],"p":0,"pr":65000},{"c":"M-117","b":"Paco Rabanne","n":"Fame Blooming Pink","g":"Mujer","s":"Mujer","ch":[],"p":0,"pr":65000},{"c":"M-118","b":"Paco Rabanne","n":"Lady Empire","g":"Mujer","s":"Mujer","ch":[],"p":0,"pr":65000},{"c":"M-119","b":"Paco Rabanne","n":"Lady Fabulous","g":"Mujer","s":"Mujer","ch":[],"p":0,"pr":65000},{"c":"M-120","b":"Paco Rabanne","n":"Lady Lucky","g":"Mujer","s":"Mujer","ch":[],"p":0,"pr":65000},{"c":"M-121","b":"Paco Rabanne","n":"Lady Million","g":"Mujer","s":"Mujer","ch":[],"p":0,"pr":65000},{"c":"M-122","b":"Paco Rabanne","n":"Lady Million Prive","g":"Mujer","s":"Mujer","ch":[],"p":0,"pr":65000},{"c":"M-123","b":"Paco Rabanne","n":"Olimpea Nueva Presentación","g":"Mujer","s":"Mujer","ch":[],"p":0,"pr":65000},{"c":"M-124","b":"Paco Rabanne","n":"Pure XS","g":"Mujer","s":"Mujer","ch":[],"p":0,"pr":65000},{"c":"M-125","b":"Parfums de Marly","n":"Delina","g":"Mujer","s":"Mujer","ch":["Envase plástico"],"p":0,"pr":75000},{"c":"M-126","b":"Paris Hilton","n":"Can Can","g":"Mujer","s":"Mujer","ch":[],"p":0,"pr":65000},{"c":"M-127","b":"Paris Hilton","n":"Dazzle","g":"Mujer","s":"Mujer","ch":["125 ml"],"p":0,"pr":70000},{"c":"M-128","b":"Paris Hilton","n":"Heiress","g":"Mujer","s":"Mujer","ch":[],"p":0,"pr":65000},{"c":"M-129","b":"Paris Hilton","n":"Paris Hilton","g":"Mujer","s":"Mujer","ch":[],"p":0,"pr":65000},{"c":"M-130","b":"Perry Ellis","n":"360","g":"Mujer","s":"Mujer","ch":[],"p":0,"pr":65000},{"c":"M-131","b":"Perry Ellis","n":"360 Fem Coral","g":"Mujer","s":"Mujer","ch":[],"p":0,"pr":65000},{"c":"M-132","b":"Prada","n":"Paradoxe","g":"Mujer","s":"Mujer","ch":[],"p":0,"pr":75000},{"c":"M-133","b":"Ralph Lauren","n":"Big Pony 2","g":"Mujer","s":"Mujer","ch":[],"p":0,"pr":65000},{"c":"M-134","b":"Ralph Lauren","n":"Fresh","g":"Mujer","s":"Mujer","ch":[],"p":0,"pr":65000},{"c":"M-135","b":"Ralph Lauren","n":"Ralph Azul","g":"Mujer","s":"Mujer","ch":[],"p":0,"pr":65000},{"c":"M-136","b":"Rasasi","n":"Hawas","g":"Mujer","s":"Mujer","ch":[],"p":0,"pr":70000},{"c":"M-137","b":"Rave","n":"Now","g":"Mujer","s":"Mujer","ch":[],"p":0,"pr":75000},{"c":"M-138","b":"Sabrina Carpenter","n":"Sweet Tooth","g":"Mujer","s":"Mujer","ch":[],"p":0,"pr":75000},{"c":"M-139","b":"Tommy Hilfiger","n":"Tommy Hilfiger","g":"Mujer","s":"Mujer","ch":[],"p":0,"pr":65000},{"c":"M-140","b":"Valentino","n":"Donna Born in Roma","g":"Mujer","s":"Mujer","ch":[],"p":0,"pr":75000},{"c":"M-141","b":"Valentino","n":"Pink PP Donna","g":"Mujer","s":"Mujer","ch":[],"p":0,"pr":75000},{"c":"M-142","b":"Versace","n":"Bright Cristal","g":"Mujer","s":"Mujer","ch":[],"p":0,"pr":65000},{"c":"M-143","b":"Versace","n":"Bright Cristal Absolu","g":"Mujer","s":"Mujer","ch":[],"p":0,"pr":70000},{"c":"M-144","b":"Versace","n":"Dylan Blue","g":"Mujer","s":"Mujer","ch":[],"p":0,"pr":65000},{"c":"M-145","b":"Versace","n":"Dylan Purple","g":"Mujer","s":"Mujer","ch":[],"p":0,"pr":70000},{"c":"M-146","b":"Versace","n":"Dylan Turquesa","g":"Mujer","s":"Mujer","ch":[],"p":0,"pr":65000},{"c":"M-147","b":"Versace","n":"Yellow Diamond","g":"Mujer","s":"Mujer","ch":[],"p":0,"pr":65000},{"c":"M-148","b":"Victoria’s Secret","n":"Bombshell","g":"Mujer","s":"Mujer","ch":[],"p":0,"pr":65000},{"c":"M-149","b":"Yves Saint Laurent","n":"Libre","g":"Mujer","s":"Mujer","ch":[],"p":0,"pr":70000},{"c":"H-001","b":"Afnan","n":"9AM","g":"Hombre","s":"Hombre","ch":["Caja"],"p":0,"pr":75000},{"c":"H-002","b":"Afnan","n":"9PM","g":"Hombre","s":"Hombre","ch":[],"p":0,"pr":75000},{"c":"H-003","b":"Al-Haramain","n":"Amber Oud Dubai Night","g":"Hombre","s":"Hombre","ch":["Baúl","Envase plástico","120 ml"],"p":0,"pr":105000},{"c":"H-004","b":"Antonio Banderas","n":"Blue Seduction","g":"Hombre","s":"Hombre","ch":[],"p":0,"pr":70000},{"c":"H-005","b":"Armaf","n":"Club de Nuit Intense","g":"Hombre","s":"Hombre","ch":[],"p":0,"pr":75000},{"c":"H-006","b":"Armaf","n":"Club Nuit Blue Iconic","g":"Hombre","s":"Hombre","ch":[],"p":0,"pr":80000},{"c":"H-007","b":"Armaf","n":"Sky Mandarín","g":"Hombre","s":"Hombre","ch":[],"p":0,"pr":80000},{"c":"H-008","b":"Bvlgari","n":"Acqua","g":"Hombre","s":"Hombre","ch":[],"p":0,"pr":65000},{"c":"H-009","b":"Bvlgari","n":"Man Extreme","g":"Hombre","s":"Hombre","ch":[],"p":0,"pr":65000},{"c":"H-010","b":"Bvlgari","n":"Man in Black","g":"Hombre","s":"Hombre","ch":[],"p":0,"pr":65000},{"c":"H-011","b":"Calvin Klein","n":"Eternity","g":"Hombre","s":"Hombre","ch":[],"p":0,"pr":65000},{"c":"H-012","b":"Carolina Herrera","n":"212 Aqua","g":"Hombre","s":"Hombre","ch":[],"p":0,"pr":65000},{"c":"H-013","b":"Carolina Herrera","n":"212 Héroes","g":"Hombre","s":"Hombre","ch":[],"p":0,"pr":65000},{"c":"H-014","b":"Carolina Herrera","n":"212 Héroes MTV","g":"Hombre","s":"Hombre","ch":[],"p":0,"pr":65000},{"c":"H-015","b":"Carolina Herrera","n":"212 NYC","g":"Hombre","s":"Hombre","ch":["Envase plástico"],"p":1,"pr":75000},{"c":"H-016","b":"Carolina Herrera","n":"212 NYC","g":"Hombre","s":"Hombre","ch":["Metálico"],"p":1,"pr":90000},{"c":"H-017","b":"Carolina Herrera","n":"212 Sexy","g":"Hombre","s":"Hombre","ch":[],"p":0,"pr":65000},{"c":"H-018","b":"Carolina Herrera","n":"212 VIP Black","g":"Hombre","s":"Hombre","ch":[],"p":0,"pr":65000},{"c":"H-019","b":"Carolina Herrera","n":"212 VIP Black I Love New York","g":"Hombre","s":"Hombre","ch":[],"p":0,"pr":65000},{"c":"H-020","b":"Carolina Herrera","n":"212 VIP Black Red","g":"Hombre","s":"Hombre","ch":[],"p":0,"pr":65000},{"c":"H-021","b":"Carolina Herrera","n":"212 VIP Black Smiley","g":"Hombre","s":"Hombre","ch":[],"p":0,"pr":65000},{"c":"H-022","b":"Carolina Herrera","n":"212 VIP Wild Party","g":"Hombre","s":"Hombre","ch":[],"p":0,"pr":65000},{"c":"H-023","b":"Carolina Herrera","n":"212 Wins","g":"Hombre","s":"Hombre","ch":[],"p":0,"pr":65000},{"c":"H-024","b":"Carolina Herrera","n":"Bad Boy","g":"Hombre","s":"Hombre","ch":[],"p":0,"pr":65000},{"c":"H-025","b":"Carolina Herrera","n":"CH","g":"Hombre","s":"Hombre","ch":[],"p":0,"pr":65000},{"c":"H-026","b":"Cartier","n":"Declaración","g":"Hombre","s":"Hombre","ch":[],"p":0,"pr":70000},{"c":"H-027","b":"Cartier","n":"Declaración Essence","g":"Hombre","s":"Hombre","ch":[],"p":0,"pr":70000},{"c":"H-028","b":"Chanel","n":"Allure Sport","g":"Hombre","s":"Hombre","ch":[],"p":0,"pr":65000},{"c":"H-029","b":"Chanel","n":"Bleu Chanel","g":"Hombre","s":"Hombre","ch":[],"p":0,"pr":65000},{"c":"H-030","b":"Chanel","n":"Bleu Chanel Parfum","g":"Hombre","s":"Hombre","ch":[],"p":0,"pr":65000},{"c":"H-031","b":"Clinique","n":"Happy","g":"Hombre","s":"Hombre","ch":[],"p":0,"pr":65000},{"c":"H-032","b":"Creed","n":"Aventus","g":"Hombre","s":"Hombre","ch":["100 ml"],"p":0,"pr":65000},{"c":"H-033","b":"Creed","n":"Aventus Aniversario 10 Años","g":"Hombre","s":"Hombre","ch":[],"p":0,"pr":65000},{"c":"H-034","b":"Creed","n":"Green Irish","g":"Hombre","s":"Hombre","ch":["100 ml"],"p":0,"pr":70000},{"c":"H-035","b":"Diesel","n":"Only the Brave","g":"Hombre","s":"Hombre","ch":["75 ml"],"p":0,"pr":65000},{"c":"H-036","b":"Diesel","n":"Tattoo","g":"Hombre","s":"Hombre","ch":["125 ml"],"p":0,"pr":75000},{"c":"H-037","b":"Dior","n":"Fahrenheit","g":"Hombre","s":"Hombre","ch":[],"p":0,"pr":65000},{"c":"H-038","b":"Dior","n":"Sauvage","g":"Hombre","s":"Hombre","ch":[],"p":1,"pr":85000},{"c":"H-039","b":"Dior","n":"Sauvage Elixir","g":"Hombre","s":"Hombre","ch":["Estuche de lujo","65 ml"],"p":0,"pr":70000},{"c":"H-040","b":"Dolce & Gabbana","n":"Italian Love Light Blue","g":"Hombre","s":"Hombre","ch":["125 ml"],"p":0,"pr":75000},{"c":"H-041","b":"Dolce & Gabbana","n":"Italian Zest","g":"Hombre","s":"Hombre","ch":["125 ml"],"p":0,"pr":75000},{"c":"H-042","b":"Dolce & Gabbana","n":"K","g":"Hombre","s":"Hombre","ch":[],"p":0,"pr":65000},{"c":"H-043","b":"Dolce & Gabbana","n":"K Parfum","g":"Hombre","s":"Hombre","ch":[],"p":0,"pr":65000},{"c":"H-044","b":"Dolce & Gabbana","n":"Light Blue","g":"Hombre","s":"Hombre","ch":["125 ml"],"p":0,"pr":75000},{"c":"H-045","b":"Dolce & Gabbana","n":"Love Is Love Light Blue","g":"Hombre","s":"Hombre","ch":["125 ml"],"p":0,"pr":75000},{"c":"H-046","b":"Dolce & Gabbana","n":"The One","g":"Hombre","s":"Hombre","ch":[],"p":0,"pr":65000},{"c":"H-047","b":"Dumont","n":"Nitro Red","g":"Hombre","s":"Hombre","ch":[],"p":0,"pr":80000},{"c":"H-048","b":"Emporio Armani","n":"Stronger Intensely","g":"Hombre","s":"Hombre","ch":[],"p":0,"pr":65000},{"c":"H-049","b":"Emporio Armani","n":"Stronger With You","g":"Hombre","s":"Hombre","ch":[],"p":0,"pr":65000},{"c":"H-050","b":"Giorgio Armani","n":"Acqua di Giò","g":"Hombre","s":"Hombre","ch":[],"p":0,"pr":65000},{"c":"H-051","b":"Giorgio Armani","n":"Acqua di Giò Profondo","g":"Hombre","s":"Hombre","ch":["100 ml"],"p":0,"pr":65000},{"c":"H-052","b":"Giorgio Armani","n":"Acqua di Giò Profumo","g":"Hombre","s":"Hombre","ch":["100 ml"],"p":0,"pr":65000},{"c":"H-053","b":"Givenchy","n":"Blue Label","g":"Hombre","s":"Hombre","ch":[],"p":0,"pr":70000},{"c":"H-054","b":"Gucci","n":"Guilty","g":"Hombre","s":"Hombre","ch":[],"p":0,"pr":65000},{"c":"H-055","b":"Hugo Boss","n":"Bottled","g":"Hombre","s":"Hombre","ch":[],"p":0,"pr":65000},{"c":"H-056","b":"Hugo Boss","n":"Bottled Night","g":"Hombre","s":"Hombre","ch":[],"p":0,"pr":65000},{"c":"H-057","b":"Hugo Boss","n":"Just Different","g":"Hombre","s":"Hombre","ch":["125 o 150 ml"],"p":0,"pr":75000},{"c":"H-058","b":"Hugo Boss","n":"Man","g":"Hombre","s":"Hombre","ch":["100 ml"],"p":0,"pr":65000},{"c":"H-059","b":"Hugo Boss","n":"Man","g":"Hombre","s":"Hombre","ch":["125 o 150 ml"],"p":0,"pr":75000},{"c":"H-060","b":"Hugo Boss","n":"Red","g":"Hombre","s":"Hombre","ch":["125 o 150 ml"],"p":0,"pr":75000},{"c":"H-061","b":"Hugo Boss","n":"Scent","g":"Hombre","s":"Hombre","ch":[],"p":0,"pr":65000},{"c":"H-062","b":"Hugo Boss","n":"Unlimited","g":"Hombre","s":"Hombre","ch":[],"p":0,"pr":65000},{"c":"H-063","b":"Issey Miyake","n":"Issey Miyake","g":"Hombre","s":"Hombre","ch":["125 ml"],"p":1,"pr":85000},{"c":"H-064","b":"Jean Paul Gaultier","n":"Elixir","g":"Hombre","s":"Hombre","ch":[],"p":0,"pr":90000},{"c":"H-065","b":"Jean Paul Gaultier","n":"Le Beau","g":"Hombre","s":"Hombre","ch":["125 ml"],"p":0,"pr":90000},{"c":"H-066","b":"Jean Paul Gaultier","n":"Le Beau le Parfum","g":"Hombre","s":"Hombre","ch":["125 ml"],"p":0,"pr":90000},{"c":"H-067","b":"Jean Paul Gaultier","n":"Scandal","g":"Hombre","s":"Hombre","ch":[],"p":0,"pr":65000},{"c":"H-068","b":"Jean Paul Gaultier","n":"Tradicional","g":"Hombre","s":"Hombre","ch":["125 ml"],"p":0,"pr":75000},{"c":"H-069","b":"Jean Paul Gaultier","n":"Ultramale","g":"Hombre","s":"Hombre","ch":["125 ml"],"p":0,"pr":75000},{"c":"H-070","b":"Lacoste","n":"Essential","g":"Hombre","s":"Hombre","ch":["125 ml"],"p":0,"pr":75000},{"c":"H-071","b":"Lacoste","n":"L.12.12 Blanc","g":"Hombre","s":"Hombre","ch":[],"p":0,"pr":65000},{"c":"H-072","b":"Lacoste","n":"L.12.12 Blue","g":"Hombre","s":"Hombre","ch":[],"p":0,"pr":65000},{"c":"H-073","b":"Lacoste","n":"L.12.12 Noir","g":"Hombre","s":"Hombre","ch":[],"p":0,"pr":65000},{"c":"H-074","b":"Lacoste","n":"L.12.12 Rouge","g":"Hombre","s":"Hombre","ch":[],"p":0,"pr":65000},{"c":"H-075","b":"Lacoste","n":"L.12.12 Vert","g":"Hombre","s":"Hombre","ch":[],"p":0,"pr":65000},{"c":"H-076","b":"Lacoste","n":"Red","g":"Hombre","s":"Hombre","ch":["125 ml"],"p":0,"pr":75000},{"c":"H-077","b":"Lattafa","n":"Asad","g":"Hombre","s":"Hombre","ch":[],"p":0,"pr":75000},{"c":"H-078","b":"Lattafa","n":"Asad Bourbon","g":"Hombre","s":"Hombre","ch":[],"p":0,"pr":75000},{"c":"H-079","b":"Lattafa","n":"Asad Elixir","g":"Hombre","s":"Hombre","ch":[],"p":0,"pr":80000},{"c":"H-080","b":"Lattafa","n":"Asad Zanzíbar","g":"Hombre","s":"Hombre","ch":[],"p":0,"pr":75000},{"c":"H-081","b":"Lattafa","n":"Fakhar Black","g":"Hombre","s":"Hombre","ch":["Baúl"],"p":0,"pr":95000},{"c":"H-082","b":"Lattafa","n":"His Confession","g":"Hombre","s":"Hombre","ch":[],"p":0,"pr":105000},{"c":"H-083","b":"Lattafa","n":"Khamrah Dukhan","g":"Hombre","s":"Hombre","ch":[],"p":0,"pr":105000},{"c":"H-084","b":"Louis Vuitton","n":"Imagination","g":"Hombre","s":"Hombre","ch":[],"p":0,"pr":75000},{"c":"H-085","b":"Montblanc","n":"Emblem","g":"Hombre","s":"Hombre","ch":[],"p":0,"pr":65000},{"c":"H-086","b":"Montblanc","n":"Explorer","g":"Hombre","s":"Hombre","ch":[],"p":0,"pr":65000},{"c":"H-087","b":"Montblanc","n":"Legend","g":"Hombre","s":"Hombre","ch":[],"p":0,"pr":65000},{"c":"H-088","b":"Montblanc","n":"Legend Red","g":"Hombre","s":"Hombre","ch":[],"p":0,"pr":65000},{"c":"H-089","b":"Montblanc","n":"Legend Spirit","g":"Hombre","s":"Hombre","ch":[],"p":0,"pr":65000},{"c":"H-090","b":"Montblanc","n":"Starwalker","g":"Hombre","s":"Hombre","ch":[],"p":0,"pr":65000},{"c":"H-091","b":"Moschino","n":"Toy Boy","g":"Hombre","s":"Hombre","ch":[],"p":0,"pr":75000},{"c":"H-092","b":"Nautica","n":"Voyage","g":"Hombre","s":"Hombre","ch":[],"p":0,"pr":65000},{"c":"H-093","b":"Paco Rabanne","n":"1 Million Royal","g":"Hombre","s":"Hombre","ch":[],"p":0,"pr":65000},{"c":"H-094","b":"Paco Rabanne","n":"Black XS","g":"Hombre","s":"Hombre","ch":[],"p":0,"pr":65000},{"c":"H-095","b":"Paco Rabanne","n":"Black XS L’aphrodisiaque","g":"Hombre","s":"Hombre","ch":[],"p":0,"pr":65000},{"c":"H-096","b":"Paco Rabanne","n":"Black XS L’excès","g":"Hombre","s":"Hombre","ch":[],"p":0,"pr":65000},{"c":"H-097","b":"Paco Rabanne","n":"Invictus","g":"Hombre","s":"Hombre","ch":[],"p":0,"pr":65000},{"c":"H-098","b":"Paco Rabanne","n":"Invictus Acqua","g":"Hombre","s":"Hombre","ch":[],"p":0,"pr":65000},{"c":"H-099","b":"Paco Rabanne","n":"Invictus Intense","g":"Hombre","s":"Hombre","ch":[],"p":0,"pr":65000},{"c":"H-100","b":"Paco Rabanne","n":"Invictus Legend","g":"Hombre","s":"Hombre","ch":[],"p":0,"pr":65000},{"c":"H-101","b":"Paco Rabanne","n":"Invictus Ónix Rayas","g":"Hombre","s":"Hombre","ch":[],"p":0,"pr":65000},{"c":"H-102","b":"Paco Rabanne","n":"Invictus Parfum","g":"Hombre","s":"Hombre","ch":[],"p":0,"pr":70000},{"c":"H-103","b":"Paco Rabanne","n":"Invictus Platinum","g":"Hombre","s":"Hombre","ch":[],"p":0,"pr":65000},{"c":"H-104","b":"Paco Rabanne","n":"Invictus Victory","g":"Hombre","s":"Hombre","ch":[],"p":0,"pr":65000},{"c":"H-105","b":"Paco Rabanne","n":"Invictus Victory Elixir","g":"Hombre","s":"Hombre","ch":[],"p":0,"pr":65000},{"c":"H-106","b":"Paco Rabanne","n":"Million Gold","g":"Hombre","s":"Hombre","ch":[],"p":0,"pr":70000},{"c":"H-107","b":"Paco Rabanne","n":"One Million","g":"Hombre","s":"Hombre","ch":[],"p":0,"pr":65000},{"c":"H-108","b":"Paco Rabanne","n":"One Million Edition Pac-Man","g":"Hombre","s":"Hombre","ch":[],"p":0,"pr":65000},{"c":"H-109","b":"Paco Rabanne","n":"One Million Elixir","g":"Hombre","s":"Hombre","ch":[],"p":0,"pr":70000},{"c":"H-110","b":"Paco Rabanne","n":"One Million Gold Oud","g":"Hombre","s":"Hombre","ch":[],"p":0,"pr":70000},{"c":"H-111","b":"Paco Rabanne","n":"One Million Lucky","g":"Hombre","s":"Hombre","ch":[],"p":0,"pr":65000},{"c":"H-112","b":"Paco Rabanne","n":"One Million Parfum","g":"Hombre","s":"Hombre","ch":[],"p":0,"pr":65000},{"c":"H-113","b":"Paco Rabanne","n":"One Million Prive","g":"Hombre","s":"Hombre","ch":[],"p":0,"pr":65000},{"c":"H-114","b":"Paco Rabanne","n":"Phantom","g":"Hombre","s":"Hombre","ch":["100 ml"],"p":0,"pr":65000},{"c":"H-115","b":"Paco Rabanne","n":"Phantom","g":"Hombre","s":"Hombre","ch":["150 ml"],"p":0,"pr":75000},{"c":"H-116","b":"Paco Rabanne","n":"Phantom Elixir","g":"Hombre","s":"Hombre","ch":["150 ml"],"p":0,"pr":75000},{"c":"H-117","b":"Paco Rabanne","n":"Phantom Parfum","g":"Hombre","s":"Hombre","ch":["150 ml"],"p":0,"pr":75000},{"c":"H-118","b":"Paco Rabanne","n":"Pure XS","g":"Hombre","s":"Hombre","ch":[],"p":0,"pr":65000},{"c":"H-119","b":"Paris Hilton","n":"Paris Hilton","g":"Hombre","s":"Hombre","ch":[],"p":0,"pr":65000},{"c":"H-120","b":"Perry Ellis","n":"360","g":"Hombre","s":"Hombre","ch":[],"p":0,"pr":65000},{"c":"H-121","b":"Perry Ellis","n":"360 Red","g":"Hombre","s":"Hombre","ch":[],"p":0,"pr":65000},{"c":"H-122","b":"Ralph Lauren","n":"Polo Blue","g":"Hombre","s":"Hombre","ch":["125 ml"],"p":0,"pr":75000},{"c":"H-123","b":"Ralph Lauren","n":"Polo Blue Parfum","g":"Hombre","s":"Hombre","ch":["125 ml"],"p":0,"pr":75000},{"c":"H-124","b":"Ralph Lauren","n":"Polo Red","g":"Hombre","s":"Hombre","ch":["125 ml"],"p":0,"pr":75000},{"c":"H-125","b":"Ralph Lauren","n":"Polo Red Parfum","g":"Hombre","s":"Hombre","ch":["125 ml"],"p":0,"pr":75000},{"c":"H-126","b":"Rasasi","n":"Hawas","g":"Hombre","s":"Hombre","ch":[],"p":0,"pr":70000},{"c":"H-127","b":"Rasasi","n":"Hawas Ice","g":"Hombre","s":"Hombre","ch":[],"p":0,"pr":75000},{"c":"H-128","b":"Tommy Hilfiger","n":"Tommy Hilfiger","g":"Hombre","s":"Hombre","ch":[],"p":0,"pr":65000},{"c":"H-129","b":"Valentino","n":"Born in Roma","g":"Hombre","s":"Hombre","ch":[],"p":0,"pr":75000},{"c":"H-130","b":"Valentino","n":"Uomo","g":"Hombre","s":"Hombre","ch":[],"p":0,"pr":75000},{"c":"H-131","b":"Versace","n":"Dylan Blue","g":"Hombre","s":"Hombre","ch":[],"p":0,"pr":65000},{"c":"H-132","b":"Versace","n":"Eau Fraiche","g":"Hombre","s":"Hombre","ch":[],"p":1,"pr":75000},{"c":"H-133","b":"Versace","n":"Eros","g":"Hombre","s":"Hombre","ch":[],"p":0,"pr":65000},{"c":"H-134","b":"Versace","n":"Eros","g":"Hombre","s":"Hombre","ch":["200 ml"],"p":0,"pr":100000},{"c":"H-135","b":"Versace","n":"Eros Energy","g":"Hombre","s":"Hombre","ch":[],"p":0,"pr":70000},{"c":"H-136","b":"Versace","n":"Eros Flame","g":"Hombre","s":"Hombre","ch":[],"p":0,"pr":70000},{"c":"H-137","b":"Versace","n":"Eros Najim","g":"Hombre","s":"Hombre","ch":[],"p":0,"pr":65000},{"c":"H-138","b":"Versace","n":"Eros Parfum","g":"Hombre","s":"Hombre","ch":["100 ml"],"p":0,"pr":65000},{"c":"H-139","b":"Versace","n":"Pour Homme","g":"Hombre","s":"Hombre","ch":[],"p":0,"pr":75000},{"c":"H-140","b":"Victorinox","n":"Classic","g":"Hombre","s":"Hombre","ch":[],"p":0,"pr":70000},{"c":"H-141","b":"Victorinox","n":"Swiss Army","g":"Hombre","s":"Hombre","ch":[],"p":0,"pr":65000},{"c":"H-142","b":"Viktor & Rolf","n":"Spicebomb","g":"Hombre","s":"Hombre","ch":[],"p":0,"pr":70000},{"c":"H-143","b":"Yves Saint Laurent","n":"Y Parfum","g":"Hombre","s":"Hombre","ch":[],"p":0,"pr":70000},{"c":"U-001","b":"Afnan","n":"9PM Elixir","g":"Unisex","s":"Unisex","ch":["Caja"],"p":0,"pr":75000},{"c":"U-002","b":"Afnan","n":"9PM Night Out","g":"Unisex","s":"Unisex","ch":[],"p":0,"pr":90000},{"c":"U-003","b":"Afnan","n":"9PM Rebel","g":"Unisex","s":"Unisex","ch":[],"p":0,"pr":75000},{"c":"U-004","b":"Ahli","n":"Vega Karpos","g":"Unisex","s":"Unisex","ch":[],"p":1,"pr":105000},{"c":"U-005","b":"Al-Haramain","n":"Amber Gold","g":"Unisex","s":"Unisex","ch":["Baúl","100 ml"],"p":0,"pr":120000},{"c":"U-006","b":"Al-Haramain","n":"Amber Oud Private Edition","g":"Unisex","s":"Unisex","ch":["Caja metálica"],"p":0,"pr":80000},{"c":"U-007","b":"Armaf","n":"Bon Bon","g":"Unisex","s":"Unisex","ch":["Baúl"],"p":0,"pr":105000},{"c":"U-008","b":"Armaf","n":"Club de Nuit Untold","g":"Unisex","s":"Unisex","ch":[],"p":0,"pr":80000},{"c":"U-009","b":"Armaf","n":"Club Nuit Sillage","g":"Unisex","s":"Unisex","ch":[],"p":0,"pr":95000},{"c":"U-010","b":"Armaf","n":"Island Breeze","g":"Unisex","s":"Unisex","ch":[],"p":0,"pr":105000},{"c":"U-011","b":"Armaf","n":"Milestone Club de Nuit","g":"Unisex","s":"Unisex","ch":[],"p":0,"pr":80000},{"c":"U-012","b":"Armaf","n":"Odyssey Bahamas","g":"Unisex","s":"Unisex","ch":[],"p":0,"pr":80000},{"c":"U-013","b":"Armaf","n":"Odyssey Dubai Chocolat","g":"Unisex","s":"Unisex","ch":[],"p":0,"pr":80000},{"c":"U-014","b":"Armaf","n":"Odyssey Eau de Montagne","g":"Unisex","s":"Unisex","ch":[],"p":0,"pr":80000},{"c":"U-015","b":"Armaf","n":"Odyssey Go Mango","g":"Unisex","s":"Unisex","ch":[],"p":0,"pr":80000},{"c":"U-016","b":"Armaf","n":"Odyssey Limoni","g":"Unisex","s":"Unisex","ch":[],"p":0,"pr":80000},{"c":"U-017","b":"Armaf","n":"Odyssey Marshmallow","g":"Unisex","s":"Unisex","ch":[],"p":0,"pr":80000},{"c":"U-018","b":"Armaf","n":"Odyssey Revolution","g":"Unisex","s":"Unisex","ch":[],"p":0,"pr":80000},{"c":"U-019","b":"Armaf","n":"Odyssey Sky Mandarín Elixir","g":"Unisex","s":"Unisex","ch":[],"p":0,"pr":80000},{"c":"U-020","b":"Armaf","n":"Odyssey Spectra","g":"Unisex","s":"Unisex","ch":[],"p":0,"pr":80000},{"c":"U-021","b":"Bharara","n":"Bleu","g":"Unisex","s":"Unisex","ch":["Tipo original"],"p":0,"pr":100000},{"c":"U-022","b":"Bharara","n":"Chocolate","g":"Unisex","s":"Unisex","ch":[],"p":0,"pr":100000},{"c":"U-023","b":"Bharara","n":"King","g":"Unisex","s":"Unisex","ch":["Con perfumero"],"p":0,"pr":105000},{"c":"U-024","b":"Bharara","n":"King Parfum","g":"Unisex","s":"Unisex","ch":[],"p":0,"pr":110000},{"c":"U-025","b":"Bharara","n":"King Soleil","g":"Unisex","s":"Unisex","ch":[],"p":0,"pr":110000},{"c":"U-026","b":"Bharara","n":"Niche Femme","g":"Unisex","s":"Unisex","ch":[],"p":0,"pr":100000},{"c":"U-027","b":"Bharara","n":"Onyx","g":"Unisex","s":"Unisex","ch":[],"p":0,"pr":100000},{"c":"U-028","b":"Bharara","n":"Scarlet","g":"Unisex","s":"Unisex","ch":[],"p":0,"pr":105000},{"c":"U-029","b":"Bond No. 9","n":"Beekman Place","g":"Unisex","s":"Unisex","ch":[],"p":0,"pr":100000},{"c":"U-030","b":"Bond No. 9","n":"Bleecker Street NYC","g":"Unisex","s":"Unisex","ch":[],"p":0,"pr":100000},{"c":"U-031","b":"Bond No. 9","n":"Greenwich Village","g":"Unisex","s":"Unisex","ch":[],"p":0,"pr":100000},{"c":"U-032","b":"Bond No. 9","n":"Tribeca","g":"Unisex","s":"Unisex","ch":[],"p":0,"pr":100000},{"c":"U-033","b":"Calvin Klein","n":"CK One","g":"Unisex","s":"Unisex","ch":["100 ml"],"p":0,"pr":65000},{"c":"U-034","b":"Creed","n":"Imperial","g":"Unisex","s":"Unisex","ch":["100 ml"],"p":0,"pr":65000},{"c":"U-035","b":"Creed","n":"Silver Mountain","g":"Unisex","s":"Unisex","ch":["100 ml"],"p":1,"pr":75000},{"c":"U-036","b":"Francis Kurkdjian","n":"Baccarat Rouge 5.40","g":"Unisex","s":"Unisex","ch":[],"p":0,"pr":80000},{"c":"U-037","b":"French Avenue","n":"Vulcan Baie","g":"Unisex","s":"Unisex","ch":[],"p":0,"pr":100000},{"c":"U-038","b":"Giardini di Toscana","n":"Bianco Latte","g":"Unisex","s":"Unisex","ch":[],"p":0,"pr":85000},{"c":"U-039","b":"Ilmin","n":"Il Femme","g":"Unisex","s":"Unisex","ch":["Baúl"],"p":0,"pr":105000},{"c":"U-040","b":"Ilmin","n":"Il Kakuno","g":"Unisex","s":"Unisex","ch":["Baúl"],"p":0,"pr":105000},{"c":"U-041","b":"Initio","n":"Oud For Happiness","g":"Unisex","s":"Unisex","ch":["Tipo original","90 ml"],"p":0,"pr":80000},{"c":"U-042","b":"Lattafa","n":"Afeef","g":"Unisex","s":"Unisex","ch":[],"p":0,"pr":145000},{"c":"U-043","b":"Lattafa","n":"Ajwad","g":"Unisex","s":"Unisex","ch":[],"p":0,"pr":95000},{"c":"U-044","b":"Lattafa","n":"Ajwad Pink","g":"Unisex","s":"Unisex","ch":["Baúl"],"p":0,"pr":95000},{"c":"U-045","b":"Lattafa","n":"Amethyst","g":"Unisex","s":"Unisex","ch":["Tipo original"],"p":0,"pr":100000},{"c":"U-046","b":"Lattafa","n":"Art of Universe","g":"Unisex","s":"Unisex","ch":["Baúl"],"p":0,"pr":120000},{"c":"U-047","b":"Lattafa","n":"Eclaire Banoffi","g":"Unisex","s":"Unisex","ch":[],"p":0,"pr":100000},{"c":"U-048","b":"Lattafa","n":"Eclaire Pistache","g":"Unisex","s":"Unisex","ch":[],"p":0,"pr":100000},{"c":"U-049","b":"Lattafa","n":"Emeer","g":"Unisex","s":"Unisex","ch":["Caja"],"p":0,"pr":75000},{"c":"U-050","b":"Lattafa","n":"Emeer","g":"Unisex","s":"Unisex","ch":["Tipo original"],"p":0,"pr":120000},{"c":"U-051","b":"Lattafa","n":"Honor y Glory","g":"Unisex","s":"Unisex","ch":["Baúl"],"p":0,"pr":100000},{"c":"U-052","b":"Lattafa","n":"Khamrah","g":"Unisex","s":"Unisex","ch":[],"p":0,"pr":105000},{"c":"U-053","b":"Lattafa","n":"Khamrah","g":"Unisex","s":"Unisex","ch":["Caja"],"p":0,"pr":75000},{"c":"U-054","b":"Lattafa","n":"Khamrah Qahwa","g":"Unisex","s":"Unisex","ch":[],"p":0,"pr":105000},{"c":"U-055","b":"Lattafa","n":"Khamrah Qahwa","g":"Unisex","s":"Unisex","ch":["Caja"],"p":0,"pr":70000},{"c":"U-056","b":"Lattafa","n":"Khamrah Waha","g":"Unisex","s":"Unisex","ch":[],"p":0,"pr":105000},{"c":"U-057","b":"Lattafa","n":"Mayar Cherry Intense","g":"Unisex","s":"Unisex","ch":[],"p":0,"pr":100000},{"c":"U-058","b":"Lattafa","n":"Musamam Black Intense","g":"Unisex","s":"Unisex","ch":[],"p":0,"pr":100000},{"c":"U-059","b":"Lattafa","n":"Musamam White Intense","g":"Unisex","s":"Unisex","ch":[],"p":0,"pr":100000},{"c":"U-060","b":"Lattafa","n":"Musaman","g":"Unisex","s":"Unisex","ch":[],"p":0,"pr":100000},{"c":"U-061","b":"Lattafa","n":"Oud For Glory","g":"Unisex","s":"Unisex","ch":["Tipo original"],"p":0,"pr":100000},{"c":"U-062","b":"Lattafa","n":"Shaheen Gold","g":"Unisex","s":"Unisex","ch":[],"p":0,"pr":100000},{"c":"U-063","b":"Lattafa","n":"Shaheen Silver","g":"Unisex","s":"Unisex","ch":[],"p":0,"pr":100000},{"c":"U-064","b":"Lattafa","n":"Sublime","g":"Unisex","s":"Unisex","ch":["Baúl"],"p":0,"pr":100000},{"c":"U-065","b":"Lattafa","n":"Teriaq","g":"Unisex","s":"Unisex","ch":[],"p":0,"pr":100000},{"c":"U-066","b":"Lattafa","n":"Teriaq Intense","g":"Unisex","s":"Unisex","ch":["Baúl"],"p":0,"pr":100000},{"c":"U-067","b":"Lattafa","n":"Victoria","g":"Unisex","s":"Unisex","ch":[],"p":0,"pr":90000},{"c":"U-068","b":"Lattafa","n":"Yara Moi","g":"Unisex","s":"Unisex","ch":[],"p":0,"pr":75000},{"c":"U-069","b":"Le Labo","n":"Bergamota 22","g":"Unisex","s":"Unisex","ch":[],"p":1,"pr":75000},{"c":"U-070","b":"Le Labo","n":"Santal 33","g":"Unisex","s":"Unisex","ch":["Baúl"],"p":0,"pr":75000},{"c":"U-071","b":"Louis Vuitton","n":"Ombre Nomade","g":"Unisex","s":"Unisex","ch":["Caja"],"p":0,"pr":75000},{"c":"U-072","b":"Maison Alhambra","n":"Sceptre Malachine","g":"Unisex","s":"Unisex","ch":[],"p":0,"pr":100000},{"c":"U-073","b":"Montale","n":"Arabians Tonka","g":"Unisex","s":"Unisex","ch":[],"p":1,"pr":80000},{"c":"U-074","b":"Montale","n":"Starry Night","g":"Unisex","s":"Unisex","ch":[],"p":0,"pr":65000},{"c":"U-075","b":"Moschino","n":"Toy 2 Pearl","g":"Unisex","s":"Unisex","ch":[],"p":0,"pr":75000},{"c":"U-076","b":"Orientica","n":"Amber Noir","g":"Unisex","s":"Unisex","ch":[],"p":0,"pr":120000},{"c":"U-077","b":"Orientica","n":"Azure Fantasy","g":"Unisex","s":"Unisex","ch":["Envase plástico"],"p":0,"pr":95000},{"c":"U-078","b":"Orientica","n":"Oud Saffron","g":"Unisex","s":"Unisex","ch":["Estuche de lujo","Metálico"],"p":0,"pr":110000},{"c":"U-079","b":"Orientica","n":"Rouge","g":"Unisex","s":"Unisex","ch":["Caja metálica"],"p":0,"pr":80000},{"c":"U-080","b":"Orientica","n":"Rouge","g":"Unisex","s":"Unisex","ch":["Estuche de lujo","Metálico"],"p":0,"pr":105000},{"c":"U-081","b":"Orientica","n":"Royal Amber","g":"Unisex","s":"Unisex","ch":["Caja metálica"],"p":0,"pr":80000},{"c":"U-082","b":"Orientica","n":"Royal Blue","g":"Unisex","s":"Unisex","ch":[],"p":0,"pr":120000},{"c":"U-083","b":"Orientica","n":"Royal Exclusive","g":"Unisex","s":"Unisex","ch":[],"p":0,"pr":120000},{"c":"U-084","b":"Parfums de Marly","n":"Layton Exclusif","g":"Unisex","s":"Unisex","ch":[],"p":0,"pr":80000},{"c":"U-085","b":"Paris Corner","n":"Marshmallow Blush","g":"Unisex","s":"Unisex","ch":[],"p":0,"pr":100000},{"c":"U-086","b":"Rasasi","n":"Hawas Fire","g":"Unisex","s":"Unisex","ch":[],"p":0,"pr":75000},{"c":"U-087","b":"Rasasi","n":"Hawas Malibú","g":"Unisex","s":"Unisex","ch":[],"p":0,"pr":70000},{"c":"U-088","b":"Tom Ford","n":"Ombre Leather","g":"Unisex","s":"Unisex","ch":[],"p":0,"pr":80000},{"c":"U-089","b":"Xerjoff","n":"Erba Pura","g":"Unisex","s":"Unisex","ch":["Baúl"],"p":1,"pr":105000},{"c":"U-090","b":"Xerjoff","n":"Erba Pura","g":"Unisex","s":"Unisex","ch":["Caja metálica"],"p":0,"pr":85000}]</script>
+<script>
+(function(){
+  var DATA = JSON.parse(document.getElementById('data').textContent);
+  var WA = "573112601138";
+  var D2 = 0, D3 = 0;
+  function fmt(n){ return '$' + String(Math.round(n)).replace(/\B(?=(\d{3})+(?!\d))/g,'.'); }
+  function norm(s){ return s.normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase(); }
+  function esc(s){ return String(s).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];}); }
+  function wa(text){ return 'https://wa.me/' + WA + '?text=' + encodeURIComponent(text); }
+  function discount(n){ return D3*Math.floor(n/3) + (n%3===2 ? D2 : 0); }
+
+  DATA.forEach(function(d){ d.hay = norm([d.c,d.b,d.n,d.ch.join(' '),d.g,d.s].join(' ')); });
+  var byCode = {}; DATA.forEach(function(d){ byCode[d.c]=d; });
+
+  var state = { q:'', aud:'Todos', price:'all', brand:'', sort:'cat' };
+  var cart = {};  // code -> qty
+
+  document.getElementById('total').textContent = DATA.length;
+  document.getElementById('askLink').href = wa('Hola, quiero información sobre los perfumes del catálogo.');
+
+  var $q = document.getElementById('q'), $clear = document.getElementById('clear');
+  var $grid = document.getElementById('grid'), $count = document.getElementById('count');
+
+  // Sugerencias
+  ['Sauvage','Yara','212','Invictus','Khamrah','Good Girl','Aventus'].forEach(function(t){
+    var b = document.createElement('button'); b.type='button'; b.textContent=t;
+    b.addEventListener('click', function(){ $q.value=t; state.q=t; sync(); $q.focus(); });
+    document.getElementById('try').appendChild(b);
+  });
+
+  // Público
+  var AUD = ['Todos','Mujer','Hombre','Unisex','Sets'];
+  var segAud = document.getElementById('segAud');
+  AUD.forEach(function(a){
+    var n = a==='Todos' ? DATA.length : DATA.filter(function(d){return d.s===a;}).length;
+    var b = document.createElement('button'); b.type='button'; b.className='pill'; b.dataset.v=a;
+    b.innerHTML = esc(a==='Sets' ? 'Sets de regalo' : a) + '<small>' + n + '</small>';
+    b.addEventListener('click', function(){ state.aud=a; sync(); });
+    segAud.appendChild(b);
+  });
+
+  // Precio
+  var PR = [
+    {id:'all', label:'Todos los precios', test:function(p){return true;}},
+    {id:'a', label:'Hasta '+fmt(80000), test:function(p){return p<=80000;}},
+    {id:'b', label:fmt(85000)+' – '+fmt(100000), test:function(p){return p>=85000 && p<=100000;}},
+    {id:'c', label:fmt(105000)+' o más', test:function(p){return p>=105000;}}
+  ];
+  var segPrice = document.getElementById('segPrice');
+  PR.forEach(function(r){
+    var b = document.createElement('button'); b.type='button'; b.className='pill'; b.dataset.v=r.id; b.textContent=r.label;
+    b.addEventListener('click', function(){ state.price=r.id; sync(); });
+    segPrice.appendChild(b);
+  });
+
+  // Marca
+  var $brand = document.getElementById('brand');
+  var brands = Array.from(new Set(DATA.map(function(d){return d.b;}))).sort(function(a,b){return norm(a)<norm(b)?-1:1;});
+  $brand.innerHTML = '<option value="">Todas las marcas</option>' + brands.map(function(b){return '<option>'+esc(b)+'</option>';}).join('');
+  $brand.addEventListener('change', function(){ state.brand=$brand.value; sync(); });
+  document.getElementById('sort').addEventListener('change', function(e){ state.sort=e.target.value; sync(); });
+
+  $q.addEventListener('input', function(){ state.q=$q.value; sync(); });
+  $clear.addEventListener('click', function(){ $q.value=''; state.q=''; sync(); $q.focus(); });
+
+  function filtered(){
+    var toks = norm(state.q).split(/\s+/).filter(Boolean);
+    var pr = PR.filter(function(r){return r.id===state.price;})[0];
+    var out = DATA.filter(function(d){
+      if(state.aud!=='Todos' && d.s!==state.aud) return false;
+      if(state.brand && d.b!==state.brand) return false;
+      if(!pr.test(d.pr)) return false;
+      for(var i=0;i<toks.length;i++){ if(d.hay.indexOf(toks[i])<0) return false; }
+      return true;
+    });
+    if(state.sort==='brand') out.sort(function(a,b){var x=norm(a.b), y=norm(b.b); return x<y?-1:x>y?1:(norm(a.n)<norm(b.n)?-1:1);});
+    else if(state.sort==='asc') out.sort(function(a,b){return a.pr-b.pr || (norm(a.b+a.n)<norm(b.b+b.n)?-1:1);});
+    else if(state.sort==='desc') out.sort(function(a,b){return b.pr-a.pr || (norm(a.b+a.n)<norm(b.b+b.n)?-1:1);});
+    return out;
+  }
+
+  function cardHTML(d){
+    var chips = (d.p?'<li class="pchip">Premium</li>':'') + d.ch.map(function(c){return '<li>'+esc(c)+'</li>';}).join('');
+    return '<article class="card" data-s="'+esc(d.s)+'">'
+      + '<div class="meta"><span class="code">'+esc(d.c)+'</span><span class="brand">'+esc(d.b)+'</span>'+'</div>'
+      + '<h3>'+esc(d.n)+'</h3>'
+      + (chips?'<ul class="chips">'+chips+'</ul>':'')
+      + '<div class="foot"><span class="price">'+fmt(d.pr)+'</span>'
+      + '<button class="add" type="button" data-code="'+esc(d.c)+'" aria-label="Agregar '+esc(d.b+' '+d.n)+' al pedido">Agregar</button></div>'
+      + '</article>';
+  }
+
+  function render(){
+    var list = filtered();
+    if(!list.length){
+      var q = state.q.trim();
+      $grid.innerHTML = '<div class="empty"><p>No encontramos '+(q?'«'+esc(q)+'»':'perfumes con esos filtros')+'.</p>'
+        + '<p>Prueba con la marca o el código (por ejemplo M-014), o <a target="_blank" rel="noopener" href="'+wa('Hola, busco este perfume: '+q)+'">escríbenos y lo buscamos</a>.</p></div>';
+    } else {
+      $grid.innerHTML = list.map(cardHTML).join('');
+    }
+    $count.textContent = list.length===DATA.length ? ('Mostrando los '+DATA.length+' perfumes') : (list.length+(list.length===1?' perfume':' perfumes'));
+    paintButtons();
+  }
+
+  function sync(){
+    Array.prototype.forEach.call(segAud.children,function(b){ b.setAttribute('aria-pressed', String(b.dataset.v===state.aud)); });
+    Array.prototype.forEach.call(segPrice.children,function(b){ b.setAttribute('aria-pressed', String(b.dataset.v===state.price)); });
+    $clear.classList.toggle('on', !!state.q);
+    render();
+  }
+
+  function paintButtons(){
+    Array.prototype.forEach.call($grid.querySelectorAll('.add'),function(b){
+      var n = cart[b.dataset.code]||0;
+      b.classList.toggle('in', n>0);
+      b.textContent = n>0 ? 'En pedido ('+n+')' : 'Agregar';
+    });
+  }
+
+  // Carrito
+  function stats(){
+    var items=0, eligible=0, subtotal=0;
+    Object.keys(cart).forEach(function(c){
+      var d=byCode[c], q=cart[c]; items+=q; subtotal+=d.pr*q; if(d.s!=='Sets') eligible+=q;
+    });
+    var disc = discount(eligible);
+    return {items:items, eligible:eligible, subtotal:subtotal, disc:disc, total:subtotal-disc};
+  }
+  function paintBar(){
+    var s = stats(), bar=document.getElementById('bar');
+    bar.classList.toggle('on', s.items>0);
+    if(!s.items) return;
+    document.getElementById('barTot').textContent = s.items+(s.items===1?' perfume':' perfumes')+' · '+fmt(s.total);
+    var extra = discount(s.eligible+1)-discount(s.eligible);
+    var nudge = '';
+    if(s.disc>0 && extra>0) nudge = 'Ahorras '+fmt(s.disc)+'. Agrega 1 más y ahorras '+fmt(extra)+' adicionales.';
+    else if(s.disc>0) nudge = 'Ahorras '+fmt(s.disc)+' con tu combo.';
+    else if(extra>0) nudge = 'Agrega 1 perfume más y ahorra '+fmt(extra)+'.';
+    document.getElementById('barNudge').textContent = nudge;
+  }
+  function paintCart(){
+    var s = stats(), $list=document.getElementById('list');
+    var codes = Object.keys(cart);
+    $list.innerHTML = codes.map(function(c){
+      var d=byCode[c], q=cart[c];
+      return '<li><div class="nm">'+esc(d.b+' '+d.n)+'</div><div class="sub">'+esc(d.c)+(d.ch.length?' · '+esc(d.ch.join(', ')):'')+' · '+fmt(d.pr)+'</div>'
+        + '<div class="qty"><button type="button" data-act="dec" data-code="'+esc(c)+'" aria-label="Quitar uno">−</button><span aria-live="polite">'+q+'</span><button type="button" data-act="inc" data-code="'+esc(c)+'" aria-label="Agregar uno más">+</button></div></li>';
+    }).join('');
+    var h = '<div><span>Subtotal</span><span>'+fmt(s.subtotal)+'</span></div>';
+    if(s.disc>0) h += '<div class="save"><span>Ahorro por combo</span><span>−'+fmt(s.disc)+'</span></div>';
+    h += '<div class="total"><span>Total</span><span>'+fmt(s.total)+'</span></div>';
+    document.getElementById('sum').innerHTML = h;
+    var lines = codes.map(function(c){ var d=byCode[c],q=cart[c]; return '• '+d.c+' '+d.b+' '+d.n+(d.ch.length?' ('+d.ch.join(', ')+')':'')+' × '+q+' — '+fmt(d.pr*q); });
+    var msg = 'Hola, quiero hacer este pedido:\n'+lines.join('\n');
+    if(s.disc>0) msg += '\nAhorro por combo: −'+fmt(s.disc);
+    msg += '\nTotal: '+fmt(s.total)+'\n¿Me confirman disponibilidad y envío?';
+    document.getElementById('send').href = wa(msg);
+  }
+  function changed(){ paintButtons(); paintBar(); var dlg=document.getElementById('cart'); if(dlg.open){ if(!Object.keys(cart).length){ dlg.close(); } else paintCart(); } }
+  function add(code,delta){
+    var n=(cart[code]||0)+delta;
+    if(n<=0) delete cart[code]; else cart[code]=n;
+    changed();
+  }
+  $grid.addEventListener('click',function(e){
+    var b=e.target.closest('.add'); if(!b) return; add(b.dataset.code,1);
+  });
+  document.getElementById('list').addEventListener('click',function(e){
+    var b=e.target.closest('button[data-act]'); if(!b) return; add(b.dataset.code, b.dataset.act==='inc'?1:-1);
+  });
+  var dlg=document.getElementById('cart');
+  document.getElementById('openCart').addEventListener('click',function(){ paintCart(); dlg.showModal(); });
+  document.getElementById('closeCart').addEventListener('click',function(){ dlg.close(); });
+  dlg.addEventListener('click',function(e){ if(e.target===dlg) dlg.close(); });
+
+  sync();
+})();
+</script>
+</body>
+</html>
